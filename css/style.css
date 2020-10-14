@@ -1,37 +1,43 @@
 html {
     font-size: 150%;
-    font-weight: 300;
     line-height: 1.4;
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
-}
-
-body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     display: flex;
     background-color:#E0E5EC;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background:#52a500;
 }
 
 .calculator {
-    box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5);
-    background-color:#E0E5EC;
-    padding: 20px;
-    border-radius: 5%;
+    background: #ffffff;
+    background: #EEEEEE;
+    width: 320px;
+    height: 550px;
+    border-radius: 0.5em;
+    box-shadow:  4px 4px 5px #418102,
+             -4px -4px 5px #64c404;
+    margin: 0 auto;
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .calculator-display {
     background: black;
     color: blanchedalmond;
-    width: 16.25rem;
-    padding: 0.75rem 1rem;
+    width: 100%;
+    height: 150px;
     margin-bottom: 20px;
     text-align: right;
-    font-size: calc(1rem * 1.2 * 1.2);
+    font-size: 45pt;
+    overflow-y: auto;
 }
 
 .calculator-keys {
-    background-color:#E0E5EC;
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-template-areas:
@@ -40,12 +46,49 @@ body {
     'four five six equal'
     'one two three equal'
     'zero decimal clear equal';
+    justify-content: space-between;
 }
 
-.calculator-keys button {
-    padding: 25px;
-    margin: 10px;
-    /* border-radius: 25px; */
+.calculator-keys .operator,
+.calculator-keys .number {
+    cursor: grab;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    box-shadow: 6px 6px 16px 0 rgba(209, 205, 199, .5),
+      -6px -6px 16px 0 rgba(255, 255, 255, .5);
+}
+
+.calculator-keys .equal {
+    grid-column: 4/ 4;
+    border-radius: 50px;
+      /* box-shadow: inset 6px 6px 16px 0 rgba(209, 205, 199, .5),
+        inset -6px -6px 16px 0 rgba(255, 255, 255, .5); */
+      box-shadow:  3px 2px 10px 0 rgba(209, 205, 199, .5),
+         -2px -2px 10px 0 rgba(255, 255, 255, 0.5);
+    grid-area: equal;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-keys .equal:after {
+    content: '';
+    height: 98%;
+    width:90%;
+    border-radius: 50px ;
+    position: absolute;
+    background-color: transparent;
+    box-shadow: inset -3px -3px 7px rgba(209, 205, 199, .5),
+        inset 3px 3px 5px rgba(209, 205, 199, .5);
+}
+
+.calculator-keys .red-text {
+    color: #ff0000;
 }
 
 .one {
@@ -96,32 +139,31 @@ body {
     grid-area: clear;
 }
 
-.equal {
-    grid-area: equal;
-    background: orange;
-}
-
-.equal:active {
-    background: rgb(255, 148, 48);
-}
-
-.number {
-    background: rgb(255, 255, 255);
-}
-
-.number:active {
+/*.number:active {
     background:   rgb(245, 245, 245);
-}
+} */
 
-.operator {
+/* .calculator-keys .equal:active {
+    background: rgb(255, 148, 48);
+} */
+
+/* .operator {
     background: rgb(211, 211, 211);
-}
+} */
 
-.operator:active {
+/* .operator:active {
     background:   rgba(190, 190, 190, 0.9);
+} */
+
+.operator,
+.number,
+.equal {
+    border: none;
+    margin: 5px;
 }
 
-button {
-    border: 1px solid rgb(0, 0, 0);
+.operator:focus,
+.number:focus,
+.equal:focus {
     outline: none;
 }
