@@ -1,4 +1,4 @@
-html {
+body {
     font-size: 150%;
     line-height: 1.4;
     font-family: 'Montserrat', sans-serif;
@@ -49,8 +49,9 @@ html {
     justify-content: space-between;
 }
 
-.calculator-keys .operator,
-.calculator-keys .number {
+.calculator-keys [data-type='operator'],
+.calculator-keys [data-type='clear'],
+.calculator-keys [data-type='number'] {
     cursor: grab;
     text-align: center;
     width: 60px;
@@ -65,9 +66,7 @@ html {
 .calculator-keys .equal {
     grid-column: 4/ 4;
     border-radius: 50px;
-      /* box-shadow: inset 6px 6px 16px 0 rgba(209, 205, 199, .5),
-        inset -6px -6px 16px 0 rgba(255, 255, 255, .5); */
-      box-shadow:  3px 2px 10px 0 rgba(209, 205, 199, .5),
+       box-shadow:  3px 2px 10px 0 rgba(209, 205, 199, .5),
          -2px -2px 10px 0 rgba(255, 255, 255, 0.5);
     grid-area: equal;
     position: relative;
@@ -91,43 +90,43 @@ html {
     color: #ff0000;
 }
 
-.one {
+[data-key="1"] {
     grid-area: one;
 }
 
-.two {
+[data-key="2"] {
     grid-area: two;
 }
 
-.three {
+[data-key="3"] {
     grid-area: three;
 }
 
-.four {
+[data-key="4"] {
     grid-area: four;
 }
 
-.five {
+[data-key="5"] {
     grid-area: five;
 }
 
-.six {
+[data-key="6"] {
     grid-area: six;
 }
 
-.seven {
+[data-key="7"] {
     grid-area: seven;
 }
 
-.eight {
+[data-key="8"] {
     grid-area: eight;
 }
 
-.nine {
+[data-key="9"] {
     grid-area: nine;
 }
 
-.zero {
+[data-key="0"] {
     grid-area: zero;
 }
 
@@ -139,31 +138,21 @@ html {
     grid-area: clear;
 }
 
-/*.number:active {
-    background:   rgb(245, 245, 245);
-} */
-
-/* .calculator-keys .equal:active {
-    background: rgb(255, 148, 48);
-} */
-
-/* .operator {
-    background: rgb(211, 211, 211);
-} */
-
-/* .operator:active {
-    background:   rgba(190, 190, 190, 0.9);
-} */
-
+[data-type='number'],
+[data-type='clear'],
 .operator,
-.number,
 .equal {
     border: none;
     margin: 5px;
 }
 
-.operator:focus,
-.number:focus,
+[data-type='number']:focus,
+[data-type='clear']:focus,
+[data-type='operator']:focus,
 .equal:focus {
     outline: none;
+}
+
+.calculator [data-state='selected'] {
+    background: grey;
 }
