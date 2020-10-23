@@ -68,10 +68,7 @@ function calculate(firstNumber, operator, secondNumber) {
     if (operator === 'divide') return firstNumber / secondNumber
 }
 
-
-let btns = document.querySelectorAll(".num-button");
-let allBtns = document.querySelector('button')
-let btnSpread = [...btns]
+let allBtns = document.querySelectorAll('button')
 let allBtnSpread = [...allBtns];
 
 allBtnSpread.forEach((button, i) => {

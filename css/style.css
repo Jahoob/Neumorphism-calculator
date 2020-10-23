@@ -28,13 +28,14 @@ body {
 
 .calculator-display {
     background: black;
-    color: blanchedalmond;
-    width: 100%;
+    color: rgb(255, 235, 205);
+    width: 95%;
     height: 150px;
     margin-bottom: 20px;
     text-align: right;
     font-size: 45pt;
     overflow-y: auto;
+    padding-right: 16px;
 }
 
 .calculator-keys {
@@ -151,8 +152,4 @@ body {
 [data-type='operator']:focus,
 .equal:focus {
     outline: none;
-}
-
-.calculator [data-state='selected'] {
-    background: grey;
 }
